@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, TextInput, Text, StyleSheet, Pressable, Modal , CheckBox } from 'react-native';
+import { View, TextInput, Text, StyleSheet, Pressable, Modal , CheckBox  } from 'react-native';
 import axios from 'axios';
 import { FontAwesome } from '@expo/vector-icons';
 
