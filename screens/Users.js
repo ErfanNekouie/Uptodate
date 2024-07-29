@@ -21,7 +21,7 @@ export default function Users() {
   }, []);
 
   const fetchUsers = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/users');
+    const response = await axios.get('http://157.90.234.109:5000/users');
     setUsers(response.data);
   };
 
@@ -31,7 +31,7 @@ export default function Users() {
       return;
     }
 
-    await axios.post('http://127.0.0.1:5000/users', {
+    await axios.post('http://157.90.234.109:5000/users', {
       name,
       username,
       email,
@@ -48,7 +48,7 @@ export default function Users() {
       return;
     }
 
-    await axios.put(`http://127.0.0.1:5000/users/${editingUser.id}`, {
+    await axios.put(`http://157.90.234.109:5000/users/${editingUser.id}`, {
       name,
       username,
       email,
@@ -61,7 +61,7 @@ export default function Users() {
   };
 
   const deleteUser = async (id) => {
-    await axios.delete(`http://127.0.0.1:5000/users/${id}`);
+    await axios.delete(`http://157.90.234.109:5000/users/${id}`);
     fetchUsers();
   };
 

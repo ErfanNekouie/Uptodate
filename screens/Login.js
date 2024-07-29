@@ -15,7 +15,7 @@ export default function Login({ navigation, onLogin }) {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/login', {
+      const response = await axios.post('http://157.90.234.109:5000/login', {
         username,
         password,
         remember_me: rememberMe,
@@ -32,7 +32,7 @@ export default function Login({ navigation, onLogin }) {
 
   const fetchAbout = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/about');
+      const response = await axios.get('http://157.90.234.109:5000/about');
       setAboutContent(response.data.content);
       setAboutVisible(true);
     } catch (error) {

@@ -10,12 +10,12 @@ export default function About() {
   }, []);
 
   const fetchContent = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/about');
+    const response = await axios.get('http://157.90.234.109:5000/about');
     setContent(response.data.content);
   };
 
   const saveContent = async () => {
-    await axios.post('http://127.0.0.1:5000/about', { content });
+    await axios.post('http://157.90.234.109:5000/about', { content });
     alert('Content saved successfully');
   };
 

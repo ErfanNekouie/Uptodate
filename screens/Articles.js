@@ -23,12 +23,12 @@ export default function Articles() {
   }, []);
 
   const fetchArticles = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/articles');
+    const response = await axios.get('http://157.90.234.109:5000/articles');
     setArticles(response.data);
   };
 
   const fetchCategories = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/categories');
+    const response = await axios.get('http://157.90.234.109:5000/categories');
     setCategories(response.data);
   };
 
@@ -51,8 +51,8 @@ export default function Articles() {
 
     try {
       const url = editingArticle
-        ? `http://127.0.0.1:5000/articles/${editingArticle.id}`
-        : 'http://127.0.0.1:5000/articles';
+        ? `http://157.90.234.109:5000/articles/${editingArticle.id}`
+        : 'http://157.90.234.109:5000/articles';
       const method = editingArticle ? 'put' : 'post';
 
       const response = await axios({
@@ -79,7 +79,7 @@ export default function Articles() {
 
   const deleteArticle = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/articles/${id}`);
+      await axios.delete(`http://157.90.234.109:5000/articles/${id}`);
       fetchArticles();
     } catch (error) {
       console.error('Error deleting article:', error);

@@ -14,7 +14,7 @@ export default function MyArticles() {
 
   const fetchArticles = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/my_articles');
+      const response = await axios.get('http://157.90.234.109:5000/my_articles');
       setArticles(response.data);
       response.data.forEach(article => {
         checkIfLiked(article.id);
@@ -26,7 +26,7 @@ export default function MyArticles() {
 
   const checkIfLiked = async (id) => {
     try {
-      const response = await axios.get(`http://127.0.0.1:5000/articles/${id}/is_liked`);
+      const response = await axios.get(`http://157.90.234.109:5000/articles/${id}/is_liked`);
       setLikedArticles(prevState => ({ ...prevState, [id]: response.data.is_liked }));
     } catch (error) {
       console.error('Error checking if article is liked:', error);
@@ -35,7 +35,7 @@ export default function MyArticles() {
 
   const toggleLikeArticle = async (id) => {
     try {
-      await axios.post(`http://127.0.0.1:5000/articles/${id}/like`);
+      await axios.post(`http://157.90.234.109:5000/articles/${id}/like`);
       checkIfLiked(id);
       fetchArticles();
     } catch (error) {
@@ -45,7 +45,7 @@ export default function MyArticles() {
 
   const downloadArticle = async (id) => {
     try {
-      const response = await axios.post(`http://127.0.0.1:5000/articles/${id}/download`, {}, { responseType: 'blob' });
+      const response = await axios.post(`http://157.90.234.109:5000/articles/${id}/download`, {}, { responseType: 'blob' });
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;

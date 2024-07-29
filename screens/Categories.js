@@ -17,7 +17,7 @@ export default function Categories() {
   }, []);
 
   const fetchCategories = async () => {
-    const response = await axios.get('http://127.0.0.1:5000/categories');
+    const response = await axios.get('http://157.90.234.109:5000/categories');
     setCategories(response.data);
   };
 
@@ -27,7 +27,7 @@ export default function Categories() {
       return;
     }
 
-    await axios.post('http://127.0.0.1:5000/categories', { name });
+    await axios.post('http://157.90.234.109:5000/categories', { name });
     fetchCategories();
     setModalVisible(false);
   };
@@ -38,14 +38,14 @@ export default function Categories() {
       return;
     }
 
-    await axios.put(`http://127.0.0.1:5000/categories/${editingCategory.id}`, { name });
+    await axios.put(`http://157.90.234.109:5000/categories/${editingCategory.id}`, { name });
     fetchCategories();
     setModalVisible(false);
     setEditingCategory(null);
   };
 
   const deleteCategory = async (id) => {
-    await axios.delete(`http://127.0.0.1:5000/categories/${id}`);
+    await axios.delete(`http://157.90.234.109:5000/categories/${id}`);
     fetchCategories();
   };
 

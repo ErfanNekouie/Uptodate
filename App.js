@@ -22,7 +22,7 @@ export default function App() {
       if (token) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         try {
-          const response = await axios.get('http://127.0.0.1:5000/check_session');
+          const response = await axios.get('http://157.90.234.109:5000/check_session');
           if (response.data.role) {
             setIsLoggedIn(true);
             setUserRole(response.data.role);
